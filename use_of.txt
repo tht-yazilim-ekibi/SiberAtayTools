@@ -1,0 +1,199 @@
+SQLi Dork Maker
+input kısmına yani ekrana gelen kısmına site domain yazicaksiniz.
+google.com WordPress.com gibi gibi site isimlerini yazicaksiniz.
+
+
+
+
+###
+WordPress Dork Maker
+input kısmına yani ekrana gelen kısmına site domain yazicaksiniz.
+google.com WordPress.com gibi gibi site isimlerini yazicaksiniz.
+
+
+
+
+
+
+
+###
+admin panel Finder use of 
+
+ target = str(input("Hedef adresi giriniz: "))
+kısmına https şeklinde olmiyacak bir şekilde
+google.com or nasa.gov gibi site domainleri giriyoruz kendisini başlığın https veya http olduğunu buluyor eğer hata mesajı gelir ise site firewalli engellemiştir.
+###
+
+###
+Advanced Port Scanner
+bu toolun input kısmına "site domaini yazicaksiniz" işlemi çok uzun süre bilir
+###
+
+
+###
+Hash Identifier
+bu toolu ise girilen bir karma değerinin hangi tür değer olduğunu söyler 
+ilk çıkan sonuç yani 1cisi doğru olandır
+2.ci çıkan sonuç ise benzer olandır
+eğer 3.cu bir çıktı aha çıkarsa benzediğinden çıkar.
+###
+
+###
+Some Cryptography Tools 
+
+bu araç girilen veriyi(String) şifreler hangi türde seçerseniz şifreler ve size sunar girilecek olan veriyi "String giriniz yoksa program hata vericektir"
+
+###
+
+
+###
+Netcat Listener for Reverse Shells
+
+bu araç bir reverse shell oluşturur hedef makinede sadece port ve hedef adresi giriniz domain(example.com) ip(127.1.1.0) şeklinde 
+###
+
+###
+Web Application Firewall Detecter 
+
+bu uygulama bir site bir cloudflare varmı yokmu diye tespit eder varsa hangi cloud olduğunu söyler 
+kullanımı basittir
+'google.com' yazicak;siniz o kadar 
+*bu uygulama wafw00f kullanmaktadır*
+### 
+
+###
+John the Ripper ( for hash cracking)  
+bu araç girilen ve seçilen hash değerinin Brutforce mantığı ile kırmaya çalışır bulursa found diye  gösterir 
+###
+
+
+### 
+NMAP 
+nmap <target> -f ( Her bir f paketi böler böylece firewalla takılmadan Hedef adresi tarar)
+        
+        nmap < target >  ( Bu şekilde tarama normaldir hedef adresi tarar)
+        
+        nmap <target> -Pn  ( tarama sırasinda ping atilmak istenmediği zaman host açık sayarak portları tarad)
+        nmap  -sP <target>  (Hedefe TCP SYN paketleri gondererek açık verya kaplı olduğunu gösterir)
+        
+        nmap -PS <target>  ( Hedef sisteme SYN ve ACK & TCP ve ACK göndererek sistemdeki açık portları tarar güvenlik duvarıni atlama olasılığı yüksektir )
+        
+        nmap -PA <target> ( Hedef adresi UDP paketleri ile tarar fakat UDP paketlerin gidip gitmediğine dair kesin bir bilgi olmadiği için doğruluk payi biraz duşuktur )
+        
+        nmap -PU <target> ( Sisteme ICMP Echo isteklerini göndererek sistem hakkında bilgi toplar)
+        
+        nmap -PE  <target> ( Buda sistem hakkında bilgi edinmenin başka yoludur ARP ping paketleri ile sistem hakkında bilgi edinir)
+        
+        nmap --traceroute <target> ( Bu komut Traceroute özelliği ile giden paketlerin hangi sunucu yada yoldan geçtigini gosterir {Traceroute özelliği Kali Linuxda hedef adrese giden paketin nerelerden geçtigini gösterir example: "traceroute google.com"})
+        
+        nmap <target> -p- ( Hedef Adresdeki Bütün portları tarar)
+        nmap <target> -sV ( Hedef sistemdeki port verisonlarıni oğrenir)
+        nmap <target>  -v ( V'ler artıkça -vv daha fazla detay gösterir)')
+        nmap <target>  -p21 ( Belirtilen portu tarar)
+        nmap <target>  -open ( sadece açık portları gosterir)
+        nmap <target>  -T5 ( tarama hızı en hızlı halidir 1-2-3-4-5 Tarama hızları vardir)
+        nmap <target>  -D 0.0.0.0 ( Bu şekilde kullanım ise giden paketleri o belirtilen adresin attiğıbı göstererek logları karıştırir )
+androidlerde rootlu değil ise root outing hatası verir!
+
+###
+
+
+###
+user recon 
+bu araç girilen kullanıcı adıyla popüler sosyal ağlarda arama yapar 
+sadece arama kısmına:kullanıcı_adi yazın yeter
+doğruluk oranı %98
+%2 lik bir hata payı var 
+
+###
+
+####
+viruscan;
+bu tool şimdilik çalışmıyor sebebi ise kota sınır dolduğu için kullanımı ise dosya giriyorsunuz ve dosyanın olduğu dizeyi giriyorsunuz
+###
+
+
+###
+file encryptde decrypt 
+
+bu uygulama girilen dosyayı fernet aracılığıyla ile şifreler ve size bir key verir eğer bu keyi kaybederseniz geri alamazsınız dosyalarinizi 
+###
+
+
+###
+file hash encrypt 
+
+girilen dosyayı hashe çeviri bu olayı tersine alamazsiniz kalıcı bir olaydır 
+### 
+
+
+### 
+backdoor 
+
+girilen bir hedef adresden arka kapı oluşturarak cihaza sızmaya çalışır  sadece port ve ip girmeniz yeterli 
+
+###
+
+###
+subdomain scanner
+https/http şeklinde hedef adresi giriniz
+
+###
+
+###
+exif tool
+bu işlem exiftool -common {dosya_adi} 
+ 
+dosyanın ana bilgilerini verir 
+
+2-exiftool <file_name> | grep GPS 
+2.ci işlem girilen dosyanın yada resmin konumu bulur
+3 exiftool -v < dosya_adı >
+3.cu işlem dosya hakkında daha detaylı bilgi verir 
+###
+
+###
+dnsunem 
+
+www.google.com şeklinde girerseniz DNS kayıtlarıni gösterir 
+
+####
+
+
+### 
+DNSMap bir alan adına ait alt alan adlarını tespit etmek için kullanılan küçük bir araçtır
+
+google.com normal arama komutu
+
+dnsmap hedefalanadı.foo -w wordlist.txt yukardaki isede hedef adrese wordlist kullnadak tarama yapicaz
+###
+
+
+###
+hydra kullanımı
+
+ftp servisine kaba kuvvet yapmak için bu uygulanır
+hydra -l kullanıcıadı -P parola_listesi.txt ftp://SALDIRI_YAPILACAK_IP 
+
+SSH servisi üzerinden saldırı yapmak için
+hydra -l kullanıcıadı -P parola_listesi.txt SALDIRI_YAPILACAK_IP -t 4 ssh
+
+istediğiniz servisi belirleyebilirsiniz
+####
+
+####
+hashcat kullanımı için bu siteye bakınız
+https://www.google.com/amp/s/www.prismacsi.com/hashcat-kullanimi/amp/ 
+###
+
+
+### 
+
+nikto
+perl ile yazılmış bir pentest aracıdır bir çok komutu olduğundan dolayı anlatması çok zor olduğu için iyi bir Türkçe kaynak bırakıyorum 
+
+https://www.ismailsaygili.com.tr/2012/10/nikto-vulnerability-scanner-kullanm.html?m=1
+
+
+
+
