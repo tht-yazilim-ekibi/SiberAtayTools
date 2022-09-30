@@ -1,4 +1,3 @@
-
 #! usr/bin/python3
 try:
     import requests
@@ -1215,18 +1214,36 @@ Hem kullanici adinu hemde sifreyi bilmiyorsaniz 3 e basiniz
 
         
     def SubDomainScanner(self):
-        wordlistPath = str(input("[ - ] Wordlist ismini giriniz : "))
-        targetUrl = str(input("[ + ] Url Adresini giriniz(http/https{sonda / olmasin} ): "))
-        with open(wordlistPath, mode="r", encoding="utf-8") as wlist:
-            lines = wlist.read().splitlines()
-            for sub in lines:
-                try:
-                    url = f"{targetUrl}/{sub} "
-                    __requests = requests.get(url=url)
-                    if __requests.status_code == 200:
-                        print("]]- SubDomain -[[ -> ",__requests.url)
-                except requests.ConnectionError:
-                        print(" <---- Url Bulunamadı")
+    	print("""
+   .dMMMb  dMP dMP dMMMMb         dMMMMb  .aMMMb  dMMMMMMMMb .aMMMb  dMP dMMMMb 
+  dMP" VP dMP dMP dMP"dMP        dMP VMP dMP"dMP dMP"dMP"dMPdMP"dMP amr dMP dMP 
+  VMMMb  dMP dMP dMMMMK"        dMP dMP dMP dMP dMP dMP dMPdMMMMMP dMP dMP dMP  
+dP .dMP dMP.aMP dMP.aMF        dMP.aMP dMP.aMP dMP dMP dMPdMP dMP dMP dMP dMP   
+VMMMP"  VMMMP" dMMMMP"        dMMMMP"  VMMMP" dMP dMP dMPdMP dMP dMP dMP dMP    
+                                                                                
+   .dMMMb  .aMMMb  .aMMMb  dMMMMb  dMMMMb  dMMMMMP dMMMMb                       
+  dMP" VP dMP"VMP dMP"dMP dMP dMP dMP dMP dMP     dMP.dMP                       
+  VMMMb  dMP     dMMMMMP dMP dMP dMP dMP dMMMP   dMMMMK"                        
+dP .dMP dMP.aMP dMP dMP dMP dMP dMP dMP dMP     dMP"AMF                         
+VMMMP"  VMMMP" dMP dMP dMP dMP dMP dMP dMMMMMP dMP dMP                          
+                                                                                
+    	""")
+    	site = input("Hedef site giriniz: ")
+    	dosya = open('tr.txt','r') 
+    	dirb = dosya.readlines()
+    	dosya.close() 
+    	for dir in dirb:
+    		url = site+'/'+dir
+    		istek = requests.get(url) 
+    		asl = btu(istek.content, "lxml") 
+    		al = asl.find_all(string=["404: Bu sayfa bulunamadı","404: This page could not be found","Page not found!","404 Not Found","404"])
+    		if len(al) == 0:
+    		      print(f"[+] Found {url}")
+    		elif istek.status_code == "503":
+    		      print(" Not Found")
+    		else:
+    			print("Not Found ") 
+
 
 
     def bannerQuery(self):
